@@ -23,10 +23,14 @@ def totalWords():
 def sameWords():
   file = "C:\Users\Me\Documents\CST205\CST205\Functions\Lab14\eggs.txt"
   openFile = open(file, "rt")
+  
   text = openFile.read()
   wordsUpper = text.upper()
-  words = wordsUpper.split()
+  noDashes = wordsUpper.replace("-", " ")
+  words = noDashes.split()
+  
   counts = {}
+  
   for word in words:
     if word in counts:
       counts[word] = counts[word] + 1
