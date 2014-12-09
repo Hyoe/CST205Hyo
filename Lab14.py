@@ -16,7 +16,8 @@ def totalWords():
   for lines in openFile:
     wordsNoSpaces = lines.split()  #Stores words in lists where default delimiter is blank space with built-in string method split(), resource: https://docs.python.org/2/library/stdtypes.html
     wordCount = wordCount + len(wordsNoSpaces)
-  print "Total word count = ", str(wordCount)
+  print "Total word count = " + str(wordCount)
+  
   openFile.close()
    
 
@@ -37,7 +38,14 @@ def sameWords():
     else:
       counts[word] = 1
   print counts
-  print "Total unique words = ", str(len(counts))
+  print "Total unique words = " + str(len(counts))
+  
+  mostUsedWord = max(counts.values())
+  for key in counts:
+    if counts[key] == mostUsedWord:
+        print "Most commonly occuring word(s):  " + str(key)
+  
+  openFile.close()
 
   
   
