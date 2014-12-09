@@ -1,4 +1,4 @@
- # Pair Programmers:  Hyo Lee and Jennifer Dunham
+# Pair Programmers:  Hyo Lee and Jennifer Dunham
 # CST 205
 # Lab 14 - Files in Python
 # 12/08/2014
@@ -33,6 +33,7 @@ def countSameWords():
     else:
       d[word] = 1
   print d
+  print "Unique Words: " + str(len(d))
   openFile.close()
 
 def totalAndWordCount():
@@ -41,3 +42,4 @@ def totalAndWordCount():
   print "Count for each of the words:"
   countSameWords()
   
+
