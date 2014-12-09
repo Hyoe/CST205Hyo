@@ -1,4 +1,4 @@
- # Pair Programmers:  Hyo Lee and Jennifer Dunham
+# Pair Programmers:  Hyo Lee and Jennifer Dunham
 # CST 205
 # Lab 14 - Files in Python
 # 12/08/2014
@@ -33,6 +33,7 @@ def countSameWords():
     else:
       d[word] = 1
   print d
+  print "Unique Words: " + str(len(d))
   openFile.close()
 
 def totalAndWordCount():
@@ -41,3 +42,24 @@ def totalAndWordCount():
   print "Count for each of the words:"
   countSameWords()
   
+def mostCommonWord():
+  #prints the most common word in eggs.txt
+  textFile = r"C:\Users\white_000\Documents\School\CSUMB\CST 205\Python Working Folders\14_Lab14\eggs.txt"
+  openFile = open(textFile, "rt")
+  text = openFile.read()
+  wordsLower = text.lower()
+  words = wordsLower.split()
+  d = dict()
+  for word in words:
+    if word in d:
+      d[word] += 1
+    else:
+      d[word] = 1
+  list = []
+  list = d.values()
+  list.sort()
+  mostCommonWordValue = list[len(list)-1]
+  for key in d:
+    if d[key] == mostCommonWordValue:
+        print "Most commonly occurring word:  " + str(key)
+  openFile.close()
