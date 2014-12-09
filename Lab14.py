@@ -37,5 +37,7 @@ def sameWords():
     else:
       counts[word] = 1
   print counts
+  print "Total unique words = ", str(len(counts))
+
   
   
