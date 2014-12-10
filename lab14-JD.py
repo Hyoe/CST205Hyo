@@ -136,9 +136,10 @@ def headlines():
     if endLocation == -1:
     #if endLocation <= startIndices[0] or endLocation >= (startIndices[len(startIndices)] + 200):
       break
+    print endLocation
     if endLocation >= startIndices[0]:
       endIndices.append(endLocation)
     
-    print endLocation
+    
   print endIndices
 
