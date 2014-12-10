@@ -139,7 +139,10 @@ def headlines():
     print endLocation
     if endLocation >= startIndices[0]:
       endIndices.append(endLocation)
-    
-    
   print endIndices
+  #for i in (0,lenstartIndices)-1):
+    #headline = text[startIndices[i]]
 
+  #slice
+  for i in (0, len(startIndices)-1):
+    print text[startIndices[i]+100:endIndices[i]]
