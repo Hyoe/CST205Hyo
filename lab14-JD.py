@@ -122,10 +122,11 @@ def headlines():
     startLocation = text.find("<h3 class=\"archive_title\" id=\"post-", startLocation + 1)
     if startLocation == -1:
       break
+    #adjust starting index to begin at ">"
+    startLocation = text.find(">", startLocation+1)
+    if startLocation == -1:
+      break
     startIndices.append(startLocation)
-    print startLocation
-  print startIndices
-  print len(startIndices)
         
   print "\nend:"
 
@@ -135,16 +136,11 @@ def headlines():
   while true:
     endLocation = text.find("/h3", endLocation + 1)
     if endLocation == -1:
-    #if endLocation <= startIndices[0] or endLocation >= (startIndices[len(startIndices)] + 200):
       break
-    print endLocation
+
     if endLocation >= startIndices[0]:
       endIndices.append(endLocation)
-  print endIndices
-  #for i in (0,lenstartIndices)-1):
-    #headline = text[startIndices[i]]
 
-  #slice
-  print len(startIndices)
-  for i in range(0, len(startIndices)-1):
+  for i in range(0, len(startIndices)):
     print text[startIndices[i]+100:endIndices[i]-25]
+    
