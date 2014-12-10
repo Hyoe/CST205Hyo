@@ -114,11 +114,31 @@ def headlines():
   #print noInequality
 
 # find index of substring h3 can't get it to work with <h3>
-  location = -1
+  print "start:"
+  startLocation = -1
+  startIndices = []
   while true:
-    location = text.find("<h3 class=\"archive_title\" id=\"post-", location + 1)
-    if location == -1:
+    startLocation = text.find("<h3 class=\"archive_title\" id=\"post-", startLocation + 1)
+    if startLocation == -1:
       break
+    startIndices.append(startLocation)
+    print startLocation
+  print startIndices
+  print len(startIndices)
+        
+  print "\nend:"
+
+  endLocation = -1
+  endIndices = []
+  #for i in range (0,len(startIndices)):
+  while true:
+    endLocation = text.find("/h3", endLocation + 1)
+    if endLocation == -1:
+    #if endLocation <= startIndices[0] or endLocation >= (startIndices[len(startIndices)] + 200):
+      break
+    if endLocation >= startIndices[0]:
+      endIndices.append(endLocation)
     
-    print location
+    print endLocation
+  print endIndices
 
