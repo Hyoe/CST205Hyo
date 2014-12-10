@@ -114,7 +114,7 @@ def headlines():
   #noInequality = text.replace("<", "/")
   #print noInequality
 
-# find index of substring h3 can't get it to work with <h3>
+  # find index of substring h3 can't get it to work with <h3>
   startLocation = -1
   startIndices = []
   while true:
@@ -142,6 +142,7 @@ def headlines():
       endIndices.append(endLocation)
 
   for i in range(0, len(startIndices)):
-    print text[startIndices[i]:endIndices[i]-25]
-    #print text[startIndices[i]+100:endIndices[i]-25]
+    print text[startIndices[i]:endIndices[i]-25].lstrip(">").lstrip()
+    #string.lstrip(s[, chars])
+
     
