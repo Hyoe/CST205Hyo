@@ -107,6 +107,7 @@ def findBetween():
     
         
 def headlines():
+  #source: http://otterrealm.com/author/theotterrealm/
   file = r"C:\Users\white_000\Documents\School\CSUMB\CST 205\Python Working Folders\14_Lab14\theotterrealm.html"
   openFile = open(file, "rt")
   text = openFile.read()
@@ -144,5 +145,6 @@ def headlines():
     #headline = text[startIndices[i]]
 
   #slice
-  for i in (0, len(startIndices)-1):
-    print text[startIndices[i]+100:endIndices[i]]
+  print len(startIndices)
+  for i in range(0, len(startIndices)-1):
+    print text[startIndices[i]+100:endIndices[i]-25]
