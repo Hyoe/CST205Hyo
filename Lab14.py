@@ -53,13 +53,13 @@ def headlines():
   file = r"C:\Users\Me\Documents\CST205\CST205\Functions\Lab14\theotterrealm.html"
   openFile = open(file, "rt")
   text = openFile.read()
-  noInequality = text.replace("<", "/")
-  print noInequality
+  #noInequality = text.replace("<", "/")
+  #print noInequality
 
-# find index of substring h3 can't get it to work with <h3>
+# find index of substring h3 can't get it to work with <h3 so did replace on "<" with "/">
   location = -1
   while true:
-    location = text.find("/h3", location + 1)
+    location = text.find("<h3 class=\"archive_title\" id=\"post-", location + 1)
     if location == -1:
       break
     
@@ -67,9 +67,3 @@ def headlines():
     
 
   openFile.close()
-
-
-
-
-
-
