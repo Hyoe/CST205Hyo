@@ -8,7 +8,7 @@
 #
 def totalWords():
   #Open eggs.txt
-  file = "C:\Users\Me\Documents\CST205\CST205\Functions\Lab14\eggs.txt"
+  file = r"C:\Users\Me\Documents\CST205\CST205\Functions\Lab14\eggs.txt"
   openFile = open(file, "rt")
 
   wordCount = 0   
@@ -22,7 +22,7 @@ def totalWords():
    
 
 def sameWords():
-  file = "C:\Users\Me\Documents\CST205\CST205\Functions\Lab14\eggs.txt"
+  file = r"C:\Users\Me\Documents\CST205\CST205\Functions\Lab14\eggs.txt"
   openFile = open(file, "rt")
   
   text = openFile.read()
@@ -43,9 +43,9 @@ def sameWords():
   mostUsedWord = max(counts.values())
   for key in counts:
     if counts[key] == mostUsedWord:
-        print "Most commonly occuring word(s):  " + str(key)
+      print "Most commonly occuring word(s):  " + str(key)
   
   openFile.close()
 
-  
+# Problem 2:  
   
