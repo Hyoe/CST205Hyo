@@ -63,3 +63,62 @@ def mostCommonWord():
     if d[key] == mostCommonWordValue:
         print "Most commonly occurring word:  " + str(key)
   openFile.close()
+
+# Problem 2:
+
+def extractHeadlines():
+  #prints all the headlines from otterrealm.com
+  #source: http://otterrealm.com/author/theotterrealm/
+  htmlFile = r"C:\Users\white_000\Documents\School\CSUMB\CST 205\Python Working Folders\14_Lab14\theotterrealm.html"
+  openFile = open(htmlFile, "rt")
+  textFile = openFile.read()
+  for line in textFile:
+    word = line.strip(textFile, "h3")
+    print word
+  #string.find(text, sub, "<h3", "</h3>")
+  #print sub
+  #text.split('h3', 1)
+  
+  #print textFile.split('h3')
+  
+  
+def find_between():
+  #prints all the headlines from otterrealm.com
+  #source: http://otterrealm.com/author/theotterrealm/
+  htmlFile = r"C:\Users\white_000\Documents\School\CSUMB\CST 205\Python Working Folders\14_Lab14\theotterrealm.html"
+  openFile = open(htmlFile, "rt")
+  textFile = openFile.read()
+  try:
+      start = textFile.index( "<h3" ) + len( "<h3" )
+      end = textFile.index( "</h3>", "<h3" )
+      return textFile["<h3":"</h3>"]
+  except ValueError:
+      return ""
+  print find_between( textFile, "<h3", "</h3>" )
+  openFile.close()
+
+def findBetween():
+  import re
+
+  s = '<h3asdf=5;iwantthis123jasd</h3>'
+  result = re.search('<h3(*)</h3>', s)
+  print result.group(1)
+
+    
+        
+def headlines():
+  file = r"C:\Users\white_000\Documents\School\CSUMB\CST 205\Python Working Folders\14_Lab14\theotterrealm.html"
+  openFile = open(file, "rt")
+  text = openFile.read()
+  #noInequality = text.replace("<", "/")
+  #print noInequality
+
+# find index of substring h3 can't get it to work with <h3>
+  location = -1
+  while true:
+    location = text.find("<h3 class=\"archive_title\" id=\"post-", location + 1)
+    if location == -1:
+      break
+    
+    print location
+
