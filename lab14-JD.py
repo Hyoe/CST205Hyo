@@ -115,7 +115,6 @@ def headlines():
   #print noInequality
 
 # find index of substring h3 can't get it to work with <h3>
-  print "start:"
   startLocation = -1
   startIndices = []
   while true:
@@ -126,10 +125,11 @@ def headlines():
     startLocation = text.find(">", startLocation+1)
     if startLocation == -1:
       break
+    startLocation = text.find(">", startLocation+1)
+    if startLocation == -1:
+      break
     startIndices.append(startLocation)
         
-  print "\nend:"
-
   endLocation = -1
   endIndices = []
   #for i in range (0,len(startIndices)):
@@ -142,5 +142,6 @@ def headlines():
       endIndices.append(endLocation)
 
   for i in range(0, len(startIndices)):
-    print text[startIndices[i]+100:endIndices[i]-25]
+    print text[startIndices[i]:endIndices[i]-25]
+    #print text[startIndices[i]+100:endIndices[i]-25]
     
